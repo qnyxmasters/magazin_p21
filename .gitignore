@@ -12,6 +12,8 @@ pip-selfcheck.json
 .idea/**/tasks.xml
 .idea/**/usage.statistics.xml
 .idea/**/dictionaries
+.idea/*
+.idea/.gitignore
 .idea/**/shelf
 .idea/**/aws.xml
 .idea/**/contentModel.xml
