@@ -28,4 +28,9 @@ ozimizni ismimiz bilan user ochib, root nomli db ochamiz paroli 1 bolsin✅
 saytda nimalar borligini yozib screenshot qilib qoyamiz, github ga yuklanadi
 17. ckeditorni file storage ni minio ga qaratish kk
 18. register qismida, phone bolsa, 1minutlik[cache ga expire qilib saqlanadi] 6xonali kod yuboradi(ekranga print qilinadi) 7-taskga qarang
+19. adminkada product list page da, productga tegishli imagelar soni va oxirida
+20. category ni 3talik ichma ich qilish va category ga icon qoshish kk (icon code yoki icon ozi[rasm holatda])
+21.
+
+
 

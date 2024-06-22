@@ -14,12 +14,15 @@ class User(AbstractUser):
 
 class Category(MPTTModel):
     name = CharField(max_length=255)
-    slug = SlugField(unique=True)
+    slug = SlugField(unique=True, editable=False)
     parent = TreeForeignKey('self', CASCADE, null=True, blank=True, related_name='children')
 
     class MPTTMeta:
         level_attr = 'mptt_level'
         order_insertion_by = ['name']
+
+    def __str__(self):
+        return self.name
 
     def save(self, force_insert=False, force_update=False, using=None, update_fields=None):
         self.slug = slugify(self.name)
@@ -39,6 +42,10 @@ class Product(Model):
     tags = ManyToManyField('apps.Tag', blank=True)
     created_at = DateTimeField(auto_now_add=True)
 
+    @property
+    def current_price(self):
+        return self.price - self.price * self.discount / 100
+
 
 class Review(Model):
     title = CharField(max_length=255)
@@ -49,7 +56,7 @@ class Review(Model):
 
     class Meta:
         constraints = [
-            CheckConstraint(check=Q(rating__between=(0, 10)), name="rating_between_0_10"),
+            CheckConstraint(check=Q(rating__range=(0, 10)), name="rating_range_0_10")
         ]
 
 
@@ -70,7 +77,7 @@ class Order(Model):
 
 class Cart(Model):
     user = ForeignKey('apps.User', CASCADE)
-    product = ForeignKey('apps.User', CASCADE)
+    product = ForeignKey('apps.Product', CASCADE)
     created_at = DateTimeField(auto_now_add=True)
 
 

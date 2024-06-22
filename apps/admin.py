@@ -7,6 +7,8 @@ from apps.models import Category, Product, ProductImage, Review, Tag
 @admin.register(Category)
 class CategoryDraggableMPTTAdmin(DraggableMPTTAdmin):
     mptt_level_indent = 20
+    # list_display_links = ['slug']
+    # list_display = ['slug', 'name']
 
 
 class ProductImageStackedInline(admin.StackedInline):
@@ -18,6 +20,7 @@ class ProductImageStackedInline(admin.StackedInline):
 @admin.register(Product)
 class ProductModelAdmin(admin.ModelAdmin):
     inlines = [ProductImageStackedInline]
+    list_display = ['name', 'price', 'category']
 
 
 @admin.register(Tag)
