@@ -14,7 +14,6 @@ tag ham qoshish kk ✅
 ozimizni ismimiz bilan user ochib, root nomli db ochamiz paroli 1 bolsin✅
 
 6. product listda NEW nomli badge chiqsin agar tovar qoshilganga 7kundan oshmagan bolsa
-
 7. login(email, password), register(pochtaga verification link yuboramiz + celery qoshish kk (brokerga rabbitmq))
 8. settings.html togrilash, rasm va malumotlarni update qiladigan qilish
 9. rasmlarni minioda saqlidigan qilamiz
@@ -31,6 +30,3 @@ saytda nimalar borligini yozib screenshot qilib qoyamiz, github ga yuklanadi
 19. adminkada product list page da, productga tegishli imagelar soni va oxirida
 20. category ni 3talik ichma ich qilish va category ga icon qoshish kk (icon code yoki icon ozi[rasm holatda])
 21.
-
-
-
